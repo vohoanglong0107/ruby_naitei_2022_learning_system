@@ -1,0 +1,12 @@
+en:
+  hello: "From component i18n"
+  static_pages:
+    home:
+      welcome: "welcome to Homepage!"
+      homepage: "Home"
+  helper:
+    title: "Ruby Naitei 2022 Learning System"
+  admin:
+    static_pages:
+      index:
+        title: "Admin Site"

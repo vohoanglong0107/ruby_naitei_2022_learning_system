@@ -1,0 +1,12 @@
+vi:
+  hello: "To see to home component, go to /app/components/home_component"
+  static_pages:
+    home:
+      welcome: "Chào mừng đến với Homepage!"
+      homepage: "Trang chủ"
+  helper:
+    title: "Ruby Naitei 2022 Learning System"
+  admin:
+    static_pages:
+      index:
+        title: "Trang quản lý"
