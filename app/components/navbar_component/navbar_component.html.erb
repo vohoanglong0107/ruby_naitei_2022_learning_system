@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-color">
+  <div class="container-fluid">
+    <a class="navbar-brand brand">
+      <img class="logo" src="assets/logo.png" alt="logo">
+      <h1 class="name"><%= t ".title" %></h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav nav-items">
+        <li class="nav-item hihi"><%= link_to t(".home_link"), root_path %></li>
+        <li class="nav-item"><%= link_to t(".course_link"), "#" %></li>
+        <li class="nav-item">
+          <select class="form-select" aria-label="Default select example">
+            <option selected><%= link_to t(".english"), locale: :en %></option>
+            <option select="1"><%= link_to t(".vietnamese"), locale: :vi %></option>
+          </select>
+        </li>
+        <li class="nav-item account">
+          <button class="btn button-dropdown" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            <p class="user-name">@user.name</p>
+            <img class="avatar" src="assets/default-avatar.png" alt="avatar">
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+            <li class="dropdown-item"><%= link_to t(".profile_link"), "#" %></li>
+            <li class="dropdown-item"><%= link_to t(".account_link"), "#" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="dropdown-item"><%= link_to t(".logout"), "#" %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

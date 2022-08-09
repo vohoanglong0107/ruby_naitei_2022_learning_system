@@ -6,7 +6,3 @@ en:
       homepage: "Home"
   helper:
     title: "Ruby Naitei 2022 Learning System"
-  admin:
-    static_pages:
-      index:
-        title: "Admin Site"

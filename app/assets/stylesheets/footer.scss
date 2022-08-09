@@ -1,0 +1,14 @@
+@import "colors";
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-style: none;
+  .footer-content {
+    font-size: small;
+    text-align: center;
+    padding: 15px;
+    color: $footer_content;
+  }
+}

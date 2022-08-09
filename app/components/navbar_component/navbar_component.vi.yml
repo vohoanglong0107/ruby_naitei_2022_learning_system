@@ -1,0 +1,9 @@
+vi:
+  title: "E - Learning System"
+  home_link: "Trang chủ"
+  course_link: "Khoá học"
+  english: "Tiếng Anh"
+  vietnamese: "Tiếng Việt"
+  profile_link: "Thông tin"
+  account_link: "Tài khoản"
+  logout: "Đăng xuất"
