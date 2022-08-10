@@ -4,13 +4,16 @@ stages:
   - build
   - test
 
+variables:
+  BUNDLE_PATH: vendor/bundle
+
 jobs:
   - name: build:prepare
     stage: build
     image: sunci/ruby:3.0.2
     script:
       - cp database-ci.yml config/database.yml
-      - bundle _2.1.4_ install --path vendor/bundle
+      - export BUNDLE_PATH=vendor/bundle && bundle _2.1.4_ install
     cache:
       - key: vendor_$CI_BRANCH
         paths:
@@ -20,31 +23,33 @@ jobs:
     stage: test
     image: sunci/ruby:3.0.2
     services:
-    - image: mysql:5.7.22
-      name: mysql_test
-      environment:
-        MYSQL_DATABASE: db_test
-        MYSQL_USER: user_test
-        MYSQL_PASSWORD: password_test
-        MYSQL_ROOT_PASSWORD: password_test
+      - image: mysql:5.7.22
+        name: mysql_test
+        environment:
+          MYSQL_DATABASE: db_test
+          MYSQL_USER: user_test
+          MYSQL_PASSWORD: password_test
+          MYSQL_ROOT_PASSWORD: password_test
     before_script:
-    - bundle _2.1.4_ install --path vendor/bundle
-    - mkdir .sun-ci
+      - apt install -y curl && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && . ~/.nvm/nvm.sh && nvm install 16.16.0 && nvm use 16.16.0 && nvm alias default 16.16.0 && npm install --global yarn
+      - export BUNDLE_PATH=vendor/bundle && bundle _2.1.4_ exec rake db:migrate RAILS_ENV=test && bundle _2.1.4_ exec rails webpacker:install
+      - mkdir .sun-ci && chmod 777 .sun-ci
     script:
-    - bundle _2.1.4_ exec rspec --format html --out .sun-ci/rspec.html spec/
+      - DISABLE_SPRING=1 bundle _2.1.4_ exec rspec
+      - DISABLE_SPRING=1 bundle _2.1.4_ exec rspec --format html --out .sun-ci/rspec.html spec/
     only:
       branches:
-      - master
+        - master
     artifacts:
-      name: rspec_report
+      name: rspec.html
       paths:
-      - .sun-ci
+        - .sun-ci/rspec.html
       expires_in: 3 days
 
   - name: test:rubocop
     stage: test
     image: sunci/ruby:3.0.2
     before_script:
-      - bundle _2.1.4_ install --path vendor/bundle
+      - export BUNDLE_PATH=vendor/bundle
     script:
       - bundle exec rubocop --require rubocop/formatter/checkstyle_formatter --format RuboCop::Formatter::CheckstyleFormatter --no-color app/ lib/

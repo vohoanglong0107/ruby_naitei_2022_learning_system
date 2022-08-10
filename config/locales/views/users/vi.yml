@@ -1,0 +1,14 @@
+vi:
+  users:
+    form:
+      name_label: "Họ và tên"
+      email_label: "Email"
+      password_label: "Mật khẩu"
+      password_confirmation_label: "Xác nhận mật khẩu"
+    new:
+      signup: "Đăng ký"
+      signup_prompt: "Đây sẽ là trang đăng ký dành cho người dùng mới"
+      submit_button: "Đăng ký"
+    create:
+      success: "Xin chào đến với Sample App"
+      failure: "Đăng ký thất bại"

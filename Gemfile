@@ -21,16 +21,18 @@ gem "bootsnap", ">= 1.4.4", require: false
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails", "~> 6.2.0"
   gem "guard", "~> 2.18.0"
+  gem "rspec-rails", "~> 5.1.2"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-minitest", "~> 0.20.1", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
-  gem "rspec-rails", "~> 5.1.2"
 end
 
 group :development do
   gem "guard-compat", "~> 1.2.1"
+  gem "guard-rspec", require: false
   gem "listen", "~> 3.3"
   gem "rack-mini-profiler", "~> 2.0"
   gem "solargraph"
@@ -45,6 +47,7 @@ group :test do
   gem "minitest-reporters", "~> 1.5.0"
   gem "rails-controller-testing", "~> 1.0.5"
   gem "selenium-webdriver", ">= 4.0.0.rc1"
+  gem "shoulda-matchers"
   gem "webdrivers"
 end
 
