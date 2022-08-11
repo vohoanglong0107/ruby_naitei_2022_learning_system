@@ -4,6 +4,9 @@ stages:
   - build
   - test
 
+variables:
+  BUNDLE_PATH: vendor/bundle
+
 jobs:
   - name: build:prepare
     stage: build
