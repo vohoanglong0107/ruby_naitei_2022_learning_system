@@ -12,3 +12,5 @@ vi:
     create:
       success: "Xin chào đến với Sample App"
       failure: "Đăng ký thất bại"
+    profile:
+      title: "Thông tin cá nhân"

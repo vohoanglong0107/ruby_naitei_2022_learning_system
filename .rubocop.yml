@@ -19,6 +19,7 @@ AllCops:
     - "Gemfile"
   Exclude:
     - "app/components/**/*.html.erb"
+    - "app/components/**/*.yml"
     - "vendor/**/*"
     - "config/unicorn.rb"
     - "bin/*"
@@ -515,6 +516,9 @@ Style/WordArray:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
+Lint/MissingSuper:
+  Exclude:
+    - app/components/**/*.rb
 # Align ends correctly.
 Layout/EndAlignment:
   # The value `keyword` means that `end` should be aligned with the matching

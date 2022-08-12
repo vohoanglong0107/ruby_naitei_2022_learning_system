@@ -12,3 +12,5 @@ en:
     create:
       success: "Welcome to the Sample App!"
       failure: "There was a problem creating your account."
+    profile:
+      title: "Profile"
