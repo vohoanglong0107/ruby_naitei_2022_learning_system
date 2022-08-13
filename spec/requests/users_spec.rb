@@ -1,12 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "Users", type: :request do
-  describe "GET /new" do
-    it "returns http success" do
-      get "/users/new"
-      expect(response).to have_http_status(:success)
-    end
-  end
   describe "POST /users" do
     describe "succesfully" do
       before do
@@ -16,7 +10,7 @@ RSpec.describe "Users", type: :request do
                                        password_confirmation: "foobar"}}
       end
 
-      it{should redirect_to(signup_url)}
+      it{should redirect_to(root_path)}
     end
     describe "unsuccesfully" do
       before do

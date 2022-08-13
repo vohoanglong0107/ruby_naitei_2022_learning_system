@@ -6,3 +6,9 @@ vi:
       homepage: "Trang chủ"
   helper:
     title: "Ruby Naitei 2022 Learning System"
+  sessions:
+    create:
+      signin_success: "Xin chào %{user_name}!"
+      signin_fail: "Email hoặc mật khẩu không hợp lệ! Xin hãy thử lại.."
+    find_user:
+      email_not_found: "Không tồn tại email này!"

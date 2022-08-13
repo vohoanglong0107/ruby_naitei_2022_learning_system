@@ -8,8 +8,9 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 window.bootstrap = require("bootstrap");
-require("jquery");
+import "../stylesheets/application.scss";
 
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
+global.toastr = require("toastr");

@@ -6,3 +6,9 @@ en:
       homepage: "Home"
   helper:
     title: "Ruby Naitei 2022 Learning System"
+  sessions:
+    create:
+      signin_success: "Welcome %{user_name}!"
+      signin_fail: "Invalid email/password! Please try again."
+    find_user:
+      email_not_found: "Email not found!"
