@@ -1,0 +1,21 @@
+@import "colors";
+
+.course-card {
+  .card-body {
+    background-color: #f1eee9;
+    height: 8rem !important;
+    .card-title {
+      color: #15133c;
+      font-size: 1.25rem;
+      line-height: 1.3rem;
+    }
+    .card-text {
+      color: #73777b;
+      line-height: 1.3rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
