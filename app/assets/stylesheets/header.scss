@@ -1,76 +1,19 @@
 @import "colors";
 
-.bg-color {
+.bg-nav {
   background-color: $nav_background_color;
 }
-nav {
-  position: sticky;
-  border-radius: 1rem;
-  margin: 0 10px;
-  color: $title_word_color;
-  align-items: center;
-  a {
-    color: $title_word_color;
-  }
-  a:hover {
-    color: $title_word_color;
-    text-decoration: none;
-  }
-  .brand {
-    display: inline-flex;
-    .logo {
-      width: 50px;
-      height: 50px;
-      position: relative;
-      bottom: 20px;
-    }
-    .name {
-      position: relative;
-      bottom: 30px;
-      font-family: 'Ubuntu', sans-serif;
-      padding-left: 10px;
-    }
-  }
-  .navbar-nav {
-    position: relative;
-    left: 250px;
-    align-items: center;
-    .nav-item {
-      font-weight: bold;
-      font-size: large;
-      padding: 0 20px;
-    }
-  }
-  .avatar {
-    position: relative;
-    left: 0;
-    width: 40px;
-    height: 40px;
-  }
-  .account {
-    position: sticky;
-    left: 90px;
-  }
-  .user-name {
-    color: $title_word_color;
-    padding-right: 10px;
-    margin-top: 10px;
-  }
 
-  select {
-    padding: 10px;
-  }
-  .button-dropdown {
-    display: inline-flex;
-    justify-content: flex-end;
-  }
-  .account {
-    background-color: transparent;
-    width: fit-content;
-    height: fit-content;
-  }
-  .account:hover .dropdown-menu {
-    display: block;
-    // justify-content: flex-start;
-  }
+.text-nav {
+  color: $title_word_color !important;
+}
+
+.nav-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-avatar {
+  width: 40px;
+  height: 40px;
 }
