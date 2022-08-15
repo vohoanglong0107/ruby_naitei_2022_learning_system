@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     post "/signin", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
 
-    resources :users, only: %i(new create destroy)
+    resources :users, only: %i(new create)
+    resources :courses, only: %i(index)
     namespace :admin do
       root to: "static_pages#index"
       resources :static_pages

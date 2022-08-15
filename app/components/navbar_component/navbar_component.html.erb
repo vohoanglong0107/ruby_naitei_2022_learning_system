@@ -3,7 +3,7 @@
 >
   <%= 
     link_to(
-      image_tag("logo.png", size:"50x50") +
+      image_tag("logo.png", class: "nav-logo", alt: "logo") +
       content_tag(:h1, t(".title"), class: "font-family-ubuntu text-nav ps-2"),
       "#",
       class: "navbar-brand d-inline-flex"
@@ -27,7 +27,7 @@
           </option>
         </select>
       </li>
-      <li class="nav-item">
+      <li class="nav-item dropdown">
         <button
           class="btn d-inline-flex justify-content-end align-items-center"
           type="button"
@@ -36,16 +36,16 @@
           aria-expanded="false"
         >
           <p class="user-name text-nav pe-2 mb-0 align-self-center"><%= @user.name %></p>
-          <img src="assets/default-avatar.png" alt="avatar" width=40 height=40 />
+          <%= image_tag "default-avatar.png", class: "nav-avatar", alt: "avatar" %>
         </button>
         <ul
-          class="dropdown-menu dropdown-menu-dark"
+          class="dropdown-menu btn-group"
           aria-labelledby="dropdownMenuButton2"
         >
-          <li class="dropdown-item"><%= link_to t(".profile_link"), "#" %></li>
-          <li class="dropdown-item"><%= link_to t(".account_link"), "#" %></li>
+          <li><%= link_to t(".profile_link"), "#", class: "dropdown-item" %></li>
+          <li><%= link_to t(".account_link"), "#", class: "dropdown-item" %></li>
           <li><hr class="dropdown-divider" /></li>
-          <li class="dropdown-item"><%= link_to t(".logout"), logout_path, method: :delete %></li>
+          <li><%= link_to t(".logout"), logout_path, method: :delete, class: "dropdown-item" %></li>
         </ul>
       </li>
     </ul>

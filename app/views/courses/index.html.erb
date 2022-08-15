@@ -1,0 +1,6 @@
+<% if @courses.empty? %>
+  <%= content_tag(:p, t(".no_courses")) %>
+<% else %>
+  <%= render(CourseCardsGridComponent.new(courses: @courses)) %>
+  <%== pagy_bootstrap_nav @pagy %>
+<% end %>

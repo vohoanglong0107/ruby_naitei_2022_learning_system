@@ -3,3 +3,7 @@ user:
   email_max_length: 255
   password_min_length: 6
   VALID_EMAIL_REGEX: <%= /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i %>
+course:
+  length:
+    name_max_255: 255
+    max_1000: 1000
