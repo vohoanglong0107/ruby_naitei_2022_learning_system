@@ -1,0 +1,10 @@
+en:
+  dashboard: Dashboard
+  lessons: Lessons
+  course: Course
+  name: Name
+  description: Description
+  users_completed: No. users completed
+  users_learning: No. users learning
+  created_at: Created at
+  updated_at: Updated at

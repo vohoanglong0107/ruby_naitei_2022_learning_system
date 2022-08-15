@@ -1,4 +1,4 @@
-class CoursesController < ApplicationController
+class CoursesController < BaseController
   include Pagy::Backend
 
   def index

@@ -7,3 +7,4 @@ course:
   length:
     name_max_255: 255
     max_1000: 1000
+  num_demo_4: 4

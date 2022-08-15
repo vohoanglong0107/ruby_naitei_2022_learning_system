@@ -1,16 +1,16 @@
-@import "colors";
+@import "../../assets/stylesheets/colors.scss";
 
 .course-card {
   .card-body {
-    background-color: #f1eee9;
+    background-color: $card-bg-color;
     height: 8rem !important;
     .card-title {
-      color: #15133c;
+      color: $card-title-color;
       font-size: 1.25rem;
       line-height: 1.3rem;
     }
     .card-text {
-      color: #73777b;
+      color: $card-text-color;
       line-height: 1.3rem;
       display: -webkit-box;
       -webkit-line-clamp: 3;

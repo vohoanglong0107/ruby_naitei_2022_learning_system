@@ -88,7 +88,6 @@ guard :rspec, cmd: "bundle exec rspec" do
     "spec/#{m[1]}#{m[2]}_spec.rb"
   end
   watch(%r{^app/components/(.*)/(\w*)(\.html\.erb)$}) do |m|
-    p m
     "spec/components/#{m[2]}_spec.rb"
   end
   watch(%r{^lib/(.+)\.rb$}) do |m|

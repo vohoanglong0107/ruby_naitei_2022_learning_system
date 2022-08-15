@@ -12,14 +12,10 @@
   </head>
 
   <body class="body font-family-montserrat">
-    <% if logged_in? %>
-      <%= render(NavbarComponent.new(user: current_user)) %>
-      <%= render "shared/toastr" %>
-      <%= yield %>
-      <%= render(FooterComponent.new()) %>
-      <%= debug(params) if Rails.env.development? %>
-    <% else %>
-      <% controller.redirect_to signin_path %>
-    <% end %>
+    <%= render(NavbarComponent.new(user: current_user)) %>
+    <%= render "shared/toastr" %>
+    <%= yield %>
+    <%= render(FooterComponent.new()) %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

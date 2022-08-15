@@ -19,7 +19,7 @@ RSpec.describe "Users", type: :request do
                                        password: "",
                                        password_confirmation: ""}}
       end
-      it{should render_template(:new)}
+      it{should redirect_to(signup_path)}
     end
   end
 end
