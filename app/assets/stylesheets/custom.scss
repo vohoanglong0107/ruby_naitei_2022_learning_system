@@ -1,7 +1,6 @@
 @import "colors";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu:wght@700&display=swap');
+@import "font";
 
 .body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #F7ECDE;
+  background-color: $home_bg;
 }

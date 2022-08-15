@@ -4,7 +4,6 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "3.0.2"
 
 gem "bcrypt", "~> 3.1.7"
-gem "bootstrap-sass", "~> 3.4.1"
 gem "config", "~> 4.0.0"
 gem "image_processing", "~> 1.2"
 gem "jbuilder", "~> 2.7"
