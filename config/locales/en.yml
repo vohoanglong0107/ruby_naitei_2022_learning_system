@@ -4,6 +4,8 @@ en:
     home:
       welcome: "welcome to Homepage!"
       homepage: "Home"
+      error: "You don't have right to access this page!"
+      request_login: "Please login"
   helper:
     title: "Ruby Naitei 2022 Learning System"
   sessions:
@@ -12,3 +14,7 @@ en:
       signin_fail: "Invalid email/password! Please try again."
     find_user:
       email_not_found: "Email not found!"
+  controllers:
+    base_controller:
+      is_admin:
+        error: "You don't have right to access this page!"

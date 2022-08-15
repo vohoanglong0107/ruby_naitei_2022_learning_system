@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     sign_in user
     flash[:success] = t ".signin_success", user_name: user.name
     params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-    redirect_to root_path
+    current_user.admin? ? redirect_to(admin_root_path) : redirect_to(root_path)
   end
 
   def find_user

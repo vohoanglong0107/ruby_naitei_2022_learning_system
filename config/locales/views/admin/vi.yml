@@ -1,4 +1,7 @@
 vi:
-  static_pages:
-    index:
-      title: "Trang quản lý"
+  admin:
+    static_pages:
+      index:
+        title: "Trang quản lý"
+        error: "Bạn không có quyền truy cập trang này!"
+        request_login: "Hãy đăng nhập"
