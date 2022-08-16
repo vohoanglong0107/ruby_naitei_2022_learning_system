@@ -1,10 +1,10 @@
 class Admin::BaseController < ApplicationController
-  before_action :guard_login, :is_admin?
-  layout "layouts/application_admin"
+  before_action :guard_login, :guard_admin
+  layout "application_admin"
 
   private
 
-  def is_admin?
+  def guard_admin
     return if current_user.admin?
 
     flash[:error] = t ".error"

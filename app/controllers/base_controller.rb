@@ -1,9 +1,9 @@
 class BaseController < ApplicationController
-  before_action :guard_login, :is_admin?
+  before_action :guard_login, :guard_admin
 
   private
 
-  def is_admin?
+  def guard_admin
     return unless current_user.admin?
 
     flash[:error] = t ".error"

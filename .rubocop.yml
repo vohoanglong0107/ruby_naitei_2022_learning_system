@@ -20,6 +20,8 @@ AllCops:
   Exclude:
     - "app/components/**/*.html.erb"
     - "app/components/**/*.yml"
+    - "app/components/**/*.scss"
+    - "app/components/**/*.js"
     - "vendor/**/*"
     - "config/unicorn.rb"
     - "bin/*"

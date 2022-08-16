@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash.now[:danger] = t ".failure"
-      render :new
+      redirect_to signup_path
     end
   end
 
