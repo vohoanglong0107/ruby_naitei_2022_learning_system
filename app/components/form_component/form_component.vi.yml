@@ -1,0 +1,5 @@
+vi:
+  name_field: "Tên"
+  email_field: "Email"
+  pass_field: "Mật khẩu"
+  pass_confirm_field: "Xác nhận mật khẩu"
