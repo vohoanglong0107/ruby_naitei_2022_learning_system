@@ -26,7 +26,10 @@ module SessionsHelper
   end
 
   def logged_in?
-    current_user.present?
+    return if current_user.present?
+
+    flash[:error] = t ".request_login"
+    redirect_to signin_path
   end
 
   def forget user

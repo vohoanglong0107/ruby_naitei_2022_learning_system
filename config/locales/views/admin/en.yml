@@ -1,4 +1,7 @@
 en:
-  static_pages:
-    index:
-      title: "Admin Site"
+  admin:
+    static_pages:
+      index:
+        title: "Admin Site"
+        error: "You don't have right to access this page!"
+        request_login: "Please login"
