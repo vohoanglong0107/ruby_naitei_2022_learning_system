@@ -26,7 +26,11 @@ module SessionsHelper
   end
 
   def logged_in?
-    return if current_user.present?
+    current_user.present?
+  end
+
+  def guard_login
+    return if logged_in?
 
     flash[:error] = t ".request_login"
     redirect_to signin_path

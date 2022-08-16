@@ -9,6 +9,8 @@ en:
   helper:
     title: "Ruby Naitei 2022 Learning System"
   sessions:
+    new:
+      signin: "Sign in"
     create:
       signin_success: "Welcome %{user_name}!"
       signin_fail: "Invalid email/password! Please try again."
