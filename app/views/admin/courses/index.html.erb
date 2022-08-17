@@ -1,6 +1,6 @@
 <% provide(:title, t(".title")) %>
 
 <div class="font-family-montserrat">
-  <%= render Admin::ContentHeaderComponent.new(title: t(".title"), button: t(".add_course")) %>
+  <%= render Admin::ContentHeaderComponent.new(title: t(".title"), button: t(".add_course"), path: new_admin_course_path) %>
   <%= render Admin::CourseComponent.new(courses: @courses, pagy: @pagy) %>
 </div>

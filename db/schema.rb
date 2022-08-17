@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_18_023826) do
+ActiveRecord::Schema.define(version: 2022_08_22_073346) do
 
   create_table "courses", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2022_08_18_023826) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_digest"
-    t.boolean "admin", default: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
@@ -47,7 +47,10 @@ ActiveRecord::Schema.define(version: 2022_08_18_023826) do
     t.string "translation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "lesson_id", null: false
+    t.index ["lesson_id"], name: "index_words_on_lesson_id"
   end
 
   add_foreign_key "lessons", "courses"
+  add_foreign_key "words", "lessons"
 end

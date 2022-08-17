@@ -1,21 +1,33 @@
 @import "../../assets/stylesheets/colors.scss";
 
+:root {
+  --course-card-background-color: #{$card-bg-color-user};
+  --course-card-title-color: #{$card-title-color-user};
+  --course-card-text-color: #{$card-text-color-user};
+}
+
+.admin {
+  --course-card-background-color: #{$card-bg-color-admin};
+  --course-card-title-color: #{$card-title-color-admin};
+  --course-card-text-color: #{$card-text-color-admin};
+}
+
 .course-card {
+  background-color: var(--course-card-background-color);
   .card-body {
-    background-color: $card-bg-color;
-    height: 8rem !important;
+    height: 8rem;
     .card-title {
-      color: $card-title-color;
       font-size: 1.25rem;
       line-height: 1.3rem;
+      color: var(--course-card-title-color);
     }
     .card-text {
-      color: $card-text-color;
       line-height: 1.3rem;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      color: var(--course-card-text-color);
     }
   }
 }

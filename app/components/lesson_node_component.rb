@@ -5,6 +5,5 @@ class LessonNodeComponent < ViewComponent::Base
     super
     @lesson = lesson
     @classes = classes
-    @id = "lesson-node-#{lesson.id}"
   end
 end

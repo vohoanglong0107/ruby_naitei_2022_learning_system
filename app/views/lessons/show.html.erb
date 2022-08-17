@@ -1,0 +1,4 @@
+<%= render Admin::ContentHeaderComponent.new(title: @lesson.name, button: t(".test"), path: "#") %>
+<div class="d-flex justify-content-center">
+  <%= render Admin::SlideComponent.new words: @lesson.words %>
+</div>

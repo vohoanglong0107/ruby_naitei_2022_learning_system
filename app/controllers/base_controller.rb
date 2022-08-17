@@ -6,7 +6,7 @@ class BaseController < ApplicationController
   def guard_admin
     return unless current_user.admin?
 
-    flash[:error] = t ".error"
+    flash[:error] = t "permission_denied"
     redirect_to admin_root_path
   end
 end

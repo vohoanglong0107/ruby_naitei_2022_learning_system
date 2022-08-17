@@ -1,0 +1,5 @@
+vi:
+  lessons:
+    lesson_not_found: "Khóa học không tồn tại."
+    show:
+      test: "Kiểm tra"

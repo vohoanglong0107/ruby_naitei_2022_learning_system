@@ -19,7 +19,10 @@ courses = Course.all
   end
 end
 
+lessons = Lesson.all
 10.times.each do |i|
-  Word.create!(definition: "Word N#{i}",
-               translation: Faker::Lorem.sentence)
+  lessons.each do |lesson|
+    lesson.words.create!(definition: "Word N#{i}",
+                         translation: Faker::Lorem.sentence)
+  end
 end

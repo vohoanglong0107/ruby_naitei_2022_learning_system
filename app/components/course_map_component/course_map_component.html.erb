@@ -4,6 +4,7 @@
       <%= image_tag "road.svg", class: "map-node-item map-node-path-item" %>
       <%= image_tag "road.svg", class: "map-node-item map-node-path-item rotate-90" %>
       <%= render LessonNodeComponent.new(lesson: lesson, classes: "map-node-item map-node-lesson-item") %>
+      <%= content_tag :h4, lesson.name, class: "lesson-label map-node-lesson-item" %>
     </div>
   <% end %>
 </template>
@@ -12,5 +13,5 @@
     <%= image_tag "road.svg", class: "map-node-item map-node-path-item" %>
   </div>
 </template>
-<div id="course-map">  
+<div id="course-map" class=py-5>  
 </div>
