@@ -4,7 +4,7 @@ User.create!(name: "Example User",
              password_confirmation: "foobar",
              admin: true)
 
-5.times.each do |i|
+20.times.each do |i|
   Course.create!(name: "Course N#{i}",
                  description: Faker::Lorem.sentence,
                  order: i)

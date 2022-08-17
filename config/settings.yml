@@ -8,3 +8,6 @@ course:
     name_max_255: 255
     max_1000: 1000
   num_demo_4: 4
+pagy:
+  default_page_1: 1
+  courses_per_page_16: 16

@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-class CourseCardsGridComponent < ViewComponent::Base
-  include Pagy::Frontend
-
+class Admin::CourseComponent < ViewComponent::Base
   def initialize courses:, pagy:
     super
     @courses = courses

@@ -1,5 +1,7 @@
 class Admin::CoursesController < Admin::BaseController
+  include Pagy::Backend
+
   def index
-    @courses = Course.all
+    @pagy, @courses = pagy Course.recommended
   end
 end
