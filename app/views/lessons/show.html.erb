@@ -2,3 +2,8 @@
 <div class="d-flex justify-content-center">
   <%= render Admin::SlideComponent.new words: @lesson.words %>
 </div>
+<p class="fs-3 mt-5 d-flex justify-content-center font-family-ubuntu"><%= t ".words_list" %></p>
+<div class="mx-5">
+  <%= render Admin::WordsListComponent.new words: @lesson.words %>
+</div>
+

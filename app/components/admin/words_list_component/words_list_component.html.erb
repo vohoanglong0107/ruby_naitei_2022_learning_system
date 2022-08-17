@@ -17,7 +17,7 @@
                   <%= content_tag :th, t(".definition") %>
                   <%= content_tag :th, t(".translation") %>
                   <%= content_tag :th, t(".lesson") %>
-                  <%= content_tag :th, t(".delete") %>
+                  <%= current_user.admin? ? content_tag(:th, t(".delete")) : "" %>
                 </tr>
               </thead>
               <tbody>
@@ -26,10 +26,12 @@
                     <td><%= word.definition %></td>
                     <td><%= word.translation %></td>
                     <td><%= word.lesson.name %></td>
-                    <td>
-                      <%= link_to t(".delete"), '#', method: :delete, data: { confirm: t(".confirm") },
-                      class: "btn btn-outline-secondary" %>
-                    </td>
+                    <% if current_user.admin? %>
+                      <td>
+                        <%= link_to t(".delete"), '#', method: :delete, data: { confirm: t(".confirm") },
+                        class: "btn btn-outline-secondary" %>
+                      </td>
+                    <% end %>
                   </tr>
                 <% end %>
               </tbody>
@@ -38,7 +40,7 @@
                   <%= content_tag :th, t(".name") %>
                   <%= content_tag :th, t(".description") %>
                   <%= content_tag :th, t(".lesson") %>
-                  <%= content_tag :th, t(".delete") %>
+                  <%= current_user.admin? ? content_tag(:th, t(".delete")) : "" %>
                 </tr>
               </tfoot>
             </table>
