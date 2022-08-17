@@ -1,4 +1,1 @@
-<di class="wrapper">
-  <%= render Admin::NavBarComponent.new %>
-  <%= render Admin::SideBarComponent.new %>
-</div>
+<%= render Admin::CourseComponent.new(courses: @courses, pagy: @pagy) %>

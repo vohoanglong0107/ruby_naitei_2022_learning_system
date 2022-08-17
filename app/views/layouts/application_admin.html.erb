@@ -12,7 +12,11 @@
   <body>
     <%= render "shared/toastr" %>
     <div id="root" class="admin">
-      <%= yield %>
+      <div class="wrapper">
+        <%= render Admin::NavBarComponent.new %>
+        <%= render Admin::SideBarComponent.new %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
