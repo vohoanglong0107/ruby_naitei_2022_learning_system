@@ -1,0 +1,38 @@
+.flip-container {
+  width: 400px;
+
+  .flippable {
+    transition: 0.5s;
+    transform-style: preserve-3d;
+  }
+
+  .flipme {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-container, .front, .back {
+  text-align: center;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 300px;
+}
+
+.front {
+  z-index: 2;
+  color: white;
+}
+
+.back {
+  transform: rotateY(180deg);
+  color: white;
+  position: absolute;
+  left: 50px;
+  top: 0px;
+}

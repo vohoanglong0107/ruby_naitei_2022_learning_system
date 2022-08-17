@@ -16,3 +16,5 @@ lesson:
 pagy:
   default_page_1: 1
   max_courses_per_page_12: 12
+word:
+  max_length_255: 255

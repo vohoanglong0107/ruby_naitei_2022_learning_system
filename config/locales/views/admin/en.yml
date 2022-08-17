@@ -7,7 +7,8 @@ en:
         request_login: "Please login"
     courses:
       index:
-        course: "Course"
+        title: "Course"
+        add_course: "Add course"
       new:
         new_course: "New course"
         button: "Add new course"
@@ -27,3 +28,8 @@ en:
       update:
         course_update_success: "Course is updated successfully!"
         course_update_fail: "Course is not updated!"
+    words:
+      index:
+        word: "Word"
+        title: "Lesson #id"
+        add_lesson: "Add lesson"

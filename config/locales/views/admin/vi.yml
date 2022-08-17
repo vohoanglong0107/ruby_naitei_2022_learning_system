@@ -7,7 +7,8 @@ vi:
         request_login: "Hãy đăng nhập"
     courses:
       index:
-        course: "Khoá học"
+        title: "Khoá học"
+        add_course: "Thêm khoá học"
       new:
         new_course: "Khoá học mới"
         add_new_course: "Thêm khoá học mới"
@@ -27,3 +28,8 @@ vi:
       update:
         course_update_success: "Cập nhật khóa học thành công!"
         course_update_fail: "Cập nhật khóa học thất bại!"
+    words:
+      index:
+        word: "Từ vựng"
+        title: "Bài học #id"
+        add_lesson: "Thêm bài học"
