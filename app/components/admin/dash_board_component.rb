@@ -3,6 +3,6 @@
 class Admin::DashBoardComponent < ViewComponent::Base
   def initialize
     super
-    @courses = Course.first Settings.course.num_demo_4
+    @courses = Course.last Settings.course.num_demo_4
   end
 end
