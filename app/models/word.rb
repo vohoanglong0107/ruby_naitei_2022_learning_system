@@ -1,5 +1,6 @@
 class Word < ApplicationRecord
   belongs_to :lesson
+
   validates :definition, :translation, presence: true,
   length: {maximum: Settings.word.max_length_255}
 
