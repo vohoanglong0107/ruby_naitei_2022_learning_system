@@ -2,3 +2,5 @@ en:
   courses:
     index:
       no_courses: "No courses available."
+    show:
+      no_course: "Course not found."

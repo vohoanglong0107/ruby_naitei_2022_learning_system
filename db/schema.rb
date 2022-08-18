@@ -11,13 +11,23 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2022_08_15_041644) do
-
   create_table "courses", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "order"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lessons", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "order"
+    t.string "name"
+    t.text "description"
+    t.boolean "completed", default: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index %w(course_id), name: "index_lessons_on_course_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -31,4 +41,5 @@ ActiveRecord::Schema.define(version: 2022_08_15_041644) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "lessons", "courses"
 end

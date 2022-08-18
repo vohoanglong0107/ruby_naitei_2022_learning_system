@@ -1,4 +1,5 @@
 class Course < ApplicationRecord
+  has_many :lessons, dependent: :destroy
   validates :name, presence: true,
                    length: {maximum: Settings.course.length.name_max_255}
   validates :description, presence: true,

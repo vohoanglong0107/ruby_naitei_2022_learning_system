@@ -9,3 +9,12 @@ User.create!(name: "Example User",
                  description: Faker::Lorem.sentence,
                  order: i)
 end
+
+courses = Course.all
+10.times.each do |i|
+  courses.each do |course|
+    course.lessons.create!(name: "Lesson N#{i}",
+                           description: Faker::Lorem.sentence,
+                           order: i)
+  end
+end

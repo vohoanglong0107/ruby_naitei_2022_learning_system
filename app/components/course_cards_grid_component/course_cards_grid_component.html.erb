@@ -2,9 +2,12 @@
   <div class="row pt-3">
     <% for course in @courses %>
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 pb-3">
-        <a href="#" class="text-decoration-none">
-          <%= render CourseCardComponent.new(course: course) %>
-        </a>
+        <%= link_to(
+          render(CourseCardComponent.new(course: course)),
+          course,
+          class: "text-decoration-none"
+          )
+        %>
       </div>
     <% end %>
     <% if @pagy.present? %>

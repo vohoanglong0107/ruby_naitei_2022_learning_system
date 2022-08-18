@@ -1,53 +1,72 @@
 <nav
-  class="navbar navbar-expand-lg navbar-dark bg-nav sticky-top my-0 mx-2 rounded-4 d-flex justify-content-between"
->
-  <%= 
-    link_to(
-      image_tag("logo.png", class: "nav-logo", alt: "logo") +
-      content_tag(:h1, t(".title"), class: "font-family-ubuntu text-nav ps-2"),
-      "#",
-      class: "navbar-brand d-inline-flex"
-    )
-  %>
-  <div class="navbar-collapse d-flex justify-content-end" id="navbarNav">
-    <ul class="navbar-nav align-items-center">
-      <li class="nav-item fw-bold fs-5 px-3">
-        <%= link_to t(".home_link"), root_path, class: "nav-link text-nav" %>
-      </li>
-      <li class="nav-item fw-bold fs-5 px-3">
-        <%= link_to t(".course_link"), "#", class: "nav-link text-nav" %>
-      </li>
-      <li class="nav-item fw-bold fs-5 px-3">
-        <select class="form-select p-2" aria-label="Select language">
-          <option selected>
-            <%= link_to t(".english"), locale: :en %>
-          </option>
-          <option select="1">
-            <%= link_to t(".vietnamese"), locale: :vi %>
-          </option>
-        </select>
-      </li>
-      <li class="nav-item dropdown">
-        <button
-          class="btn d-inline-flex justify-content-end align-items-center"
-          type="button"
-          id="dropdownMenuButton2"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <p class="user-name text-nav pe-2 mb-0 align-self-center"><%= @user.name %></p>
-          <%= image_tag "default-avatar.png", class: "nav-avatar", alt: "avatar" %>
-        </button>
-        <ul
-          class="dropdown-menu"
-          aria-labelledby="dropdownMenuButton2"
-        >
-          <li><%= link_to t(".profile_link"), "#", class: "dropdown-item" %></li>
-          <li><%= link_to t(".account_link"), "#", class: "dropdown-item" %></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><%= link_to t(".logout"), logout_path, method: :delete, class: "dropdown-item" %></li>
+    class="navbar navbar-expand-lg navbar-dark bg-nav sticky-top"
+    id="navbar"
+  >
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#sidebar"
+        aria-controls="offcanvasExample"
+      >
+        <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+      </button>
+      <%=
+        link_to(
+          image_tag("logo.png", class: "nav-logo", alt: "logo") +
+          content_tag(:h1, t(".title"), class: "font-family-ubuntu text-nav ps-2"),
+          is_admin? ? admin_static_pages_path : root_path,
+          class: "navbar-brand d-inline-flex"
+        )
+      %>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#topNavBar"
+        aria-controls="topNavBar"
+        aria-expanded="false"
+        aria-label='<%= t ".toggle_navigation" %>'
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="topNavBar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item fw-bold fs-5 px-3 d-flex align-items-center">
+            <%= link_to t(".home_link"), root_path, class: "nav-link text-nav" %>
+          </li>
+          <li class="nav-item fw-bold fs-5 px-3 d-flex align-items-center">
+            <%= link_to t(".course_link"), courses_path, class: "nav-link text-nav" %>
+          </li>
+          <li class="nav-item fw-bold fs-5 px-3 d-flex align-items-center">
+            <select class="form-select p-2" aria-label="Select language">
+              <option selected>
+                <%= link_to t(".english"), locale: :en %>
+              </option>
+              <option select="1">
+                <%= link_to t(".vietnamese"), locale: :vi %>
+              </option>
+            </select>
+          </li>
+          <li class="nav-item dropdown">
+            <button
+              class="btn d-inline-flex justify-content-end align-items-center"
+              type="button"
+              id="dropdownMenuButton2"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <p class="user-name text-nav pe-2 mb-0 align-self-center"><%= @user.name %></p>
+              <%= image_tag "default-avatar.png", class: "nav-avatar", alt: "avatar" %>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><%= link_to t(".profile_link"), "#", class: "dropdown-item" %></li>
+              <li><%= link_to t(".account_link"), "#", class: "dropdown-item" %></li>
+              <li><%= link_to t(".logout"), logout_url, method: :delete, class: "dropdown-item" %></li>
+            </ul>
+          </li>
         </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
+      </div>
+    </div>
+  </nav>

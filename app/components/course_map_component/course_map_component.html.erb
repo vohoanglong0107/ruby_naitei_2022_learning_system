@@ -1,0 +1,16 @@
+<template id="lesson-nodes">
+  <% for lesson in @lessons %>
+    <div class="map-node-container">
+      <%= image_tag "road.svg", class: "map-node-item map-node-path-item" %>
+      <%= image_tag "road.svg", class: "map-node-item map-node-path-item rotate-90" %>
+      <%= render LessonNodeComponent.new(lesson: lesson, classes: "map-node-item map-node-lesson-item") %>
+    </div>
+  <% end %>
+</template>
+<template id="map-path-nodes">
+  <div class="map-node-container">
+    <%= image_tag "road.svg", class: "map-node-item map-node-path-item" %>
+  </div>
+</template>
+<div id="course-map">  
+</div>
