@@ -10,4 +10,4 @@ course:
   num_demo_4: 4
 pagy:
   default_page_1: 1
-  courses_per_page_16: 16
+  max_courses_per_page_12: 12

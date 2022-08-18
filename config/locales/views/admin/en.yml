@@ -5,3 +5,15 @@ en:
         title: "Admin Site"
         error: "You don't have right to access this page!"
         request_login: "Please login"
+    courses:
+      index:
+        course: "Course"
+      new:
+        new_course: "New course"
+        button: "Add new course"
+        title: "Title"
+        description: "Description"
+        create_course: "Create course"
+      create:
+        course_create_succes: "Course is created successfully!"
+        course_create_fail: "Course is not created!"

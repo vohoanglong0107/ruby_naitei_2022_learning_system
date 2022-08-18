@@ -5,5 +5,5 @@ class Course < ApplicationRecord
                           length: {
                             maximum: Settings.course.length.max_1000
                           }
-  scope :recommended, ->{order :order}
+  scope :recommended, ->{order(created_at: :desc)}
 end

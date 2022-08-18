@@ -5,3 +5,15 @@ vi:
         title: "Trang quản lý"
         error: "Bạn không có quyền truy cập trang này!"
         request_login: "Hãy đăng nhập"
+    courses:
+      index:
+        course: "Khoá học"
+      new:
+        new_course: "Khoá học mới"
+        add_new_course: "Thêm khoá học mới"
+        title: "Tên khoá học"
+        description: "Mô tả"
+        create_course: "Tạo khoá học"
+      create:
+        course_create_succes: "Tạo khoá học mới thành công!"
+        course_create_fail: "Tạo khoá học mới thất bại!"
