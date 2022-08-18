@@ -5,4 +5,8 @@ class NavbarComponent < ViewComponent::Base
     super
     @user = user
   end
+
+  def is_admin?
+    @user.admin?
+  end
 end

@@ -1,0 +1,6 @@
+vi:
+  courses:
+    index:
+      no_courses: "Không có khóa học nào."
+    show:
+      no_course: "Khóa học không tồn tại."

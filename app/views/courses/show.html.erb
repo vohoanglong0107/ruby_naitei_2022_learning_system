@@ -1,0 +1,4 @@
+<%= content_tag :h1, @course.name %>
+<div class="d-flex justify-content-center">
+  <%= render CourseMapComponent.new(lessons: @course.lessons) %>
+</div>

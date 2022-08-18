@@ -1,0 +1,40 @@
+.map-node-container {
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: min-content;
+  align-items: center;
+  justify-items: center;
+}
+
+#course-map {
+  display: grid;
+  grid-template-columns: repeat(7, min-content);
+  align-items: center;
+  justify-items: center;
+}
+
+.clip-half-right {
+  clip-path: inset(0 50% 0 0);
+}
+.clip-half-left {
+  clip-path: inset(0 0 0 50%);
+}
+.clip-all {
+  clip-path: inset(0 50% 0 50%);
+}
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.map-node-item {
+  grid-area: 1/1/2/2;
+}
+
+.map-node-lesson-item {
+  z-index: 999;
+}
+
+.map-node-path-item {
+  width: 100px;
+  height: 100px;
+}
