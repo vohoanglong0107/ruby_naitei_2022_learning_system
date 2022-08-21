@@ -9,6 +9,10 @@ course:
     max_1000: 1000
   num_demo_4: 4
   num_preview_lesson_13: 13
+lesson:
+  length:
+    name_max_255: 255
+    max_1000: 1000
 pagy:
   default_page_1: 1
   max_courses_per_page_12: 12

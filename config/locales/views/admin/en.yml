@@ -15,5 +15,15 @@ en:
         description: "Description"
         create_course: "Create course"
       create:
-        course_create_succes: "Course is created successfully!"
+        course_create_success: "Course is created successfully!"
         course_create_fail: "Course is not created!"
+      show:
+        title: "Course #%{course}"
+        course_not_found: "Course not found!"
+      edit:
+        title: "Edit course #%{course}"
+        course: "Course #%{course}"
+        course_not_found: "Course not found!"
+      update:
+        course_update_success: "Course is updated successfully!"
+        course_update_fail: "Course is not updated!"

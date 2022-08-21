@@ -1,6 +1,7 @@
 class Admin::CoursesController < Admin::BaseController
   include Pagy::Backend
   before_action :guard_admin
+  before_action :set_course, only: %i(show edit update)
 
   def index
     @pagy, @courses = pagy Course.recommended
@@ -21,9 +22,33 @@ class Admin::CoursesController < Admin::BaseController
     redirect_to admin_root_path
   end
 
+  def show; end
+
+  def edit; end
+
+  def update
+    if @course.update course_params
+      flash[:success] = t ".course_update_success"
+    else
+      flash[:error] = @course.errors.full_messages
+    end
+    redirect_to admin_course_path @course
+  end
+
   private
 
   def course_params
-    params.require(:course).permit :name, :description
+    params.require(:course).permit :name, :description,
+                                   lessons_attributes: %i(
+                                     id name description order
+                                   )
+  end
+
+  def set_course
+    @course = Course.find_by id: params[:id]
+    return if @course.present?
+
+    flash[:error] = t ".course_not_found"
+    redirect_to admin_root_path
   end
 end

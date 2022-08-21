@@ -1,0 +1,9 @@
+en:
+  id: "ID"
+  title: "Title"
+  description: "Description"
+  create_course: "Create course"
+  edit_course: "Edit course"
+  lesson: "Lesson"
+  lessons: "Lessons"
+  add_new_lesson: "Add new lesson"

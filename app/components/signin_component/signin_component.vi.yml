@@ -1,5 +1,7 @@
 vi:
   title: "E - Learning System"
+  email: "Email"
+  password: "Mật khẩu"
   remember_me: "Lưu tài khoản"
   forgot_pwd: "Quên mật khẩu"
   no_account: "Chưa có tài khoản? "

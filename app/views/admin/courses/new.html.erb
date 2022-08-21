@@ -1,26 +1,8 @@
 <% provide(:title, t(".new_course")) %>
-<div>
-  <div>
-    <p class="font-family-ubuntu fs-1 ps-5 pt-5 d-flex justify-content-center new-course">
-      <%= t ".add_new_course" %>
-    </p>
-  </div>
-  <div class="add-course-form p-5 pt-2 font-family-montserrat">
-    <%= form_with model: [:admin, @course], method: :post do |f| %>
-      <div class="form-outline mb-4 p-5 pt-0 pb-0">
-        <%= f.label :name, t(".title") %>
-        <%= f.text_area :name, size: "70x1", class: "form-control course-name" %>
-      </div>
-
-      <div class="form-outline mb-4 p-5 pt-0 pb-0">
-        <%= f.label :description, t(".description") %>
-        <%= f.text_area :description, class: "form-control course-description" %>
-      </div>
-
-      <div class="d-grid gap-2 mb-2 p-5 pt-0 pb-0">
-        <%= f.submit t(".create_course"), class: "btn btn-dark btn-lg font-family-ubuntu" %>
-      </div>
-
-    <% end %>
-  </div>
+<p class="font-family-ubuntu fs-1 ps-5 pt-5 d-flex justify-content-center new-course">
+  <%= t ".add_new_course" %>
+</p>
+<div class="add-course-form p-5 pt-2 font-family-montserrat">
+  <%= render Admin::CourseFormComponent.new(course: @course, variant: :create) %>
 </div>
+
