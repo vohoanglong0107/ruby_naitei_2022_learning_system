@@ -15,7 +15,9 @@
       <div class="wrapper">
         <%= render Admin::NavBarComponent.new %>
         <%= render Admin::SideBarComponent.new %>
-        <%= yield %>
+        <main class="main">
+          <%= yield %>
+        </main>
       </div>
     </div>
   </body>

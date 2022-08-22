@@ -16,7 +16,8 @@
               ) +
               content_tag(:span, t(".dash_board")),
               admin_static_pages_path,
-              class: "nav-link px-3 active")
+              class: "nav-link px-3 " + (current_page?(admin_static_pages_path) ? "active" : "")
+            )
           %>
         </li>
         <li class="my-4"><hr class="dropdown-divider bg-light" /></li>
@@ -34,7 +35,8 @@
               ) +
               content_tag(:span, t(".courses")),
               admin_courses_path,
-              class: "nav-link px-3")
+              class: "nav-link px-3 " + (params[:controller] == 'admin/courses' ? "active" : "not-act")
+            )
           %>
         </li>
         <li>

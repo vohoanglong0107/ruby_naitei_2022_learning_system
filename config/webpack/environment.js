@@ -8,4 +8,14 @@ environment.plugins.prepend(
     Popper: ["popper.js", "default"],
   })
 );
+
+environment.loaders.append(
+  "sass",
+  {
+    test: /\.scss$/,
+    use: ["css-loader", "sass-loader"],
+  },
+  "sass"
+);
+
 module.exports = environment;

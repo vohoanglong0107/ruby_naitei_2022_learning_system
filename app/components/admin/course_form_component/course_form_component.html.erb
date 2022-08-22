@@ -1,0 +1,56 @@
+<template id="course-form-template">
+  <%= form_with model: [:admin, @course], method: method do |f| %>
+    <div class="mb-4">
+      <%= f.label :name, t(".title"), class: "form-label" %>
+      <%= f.text_area :name, class: "form-control course-name" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :description, t(".description"), class: "form-label" %>
+      <%= f.text_area :description, class: "form-control course-description" %>
+    </div>
+
+    <% if @variant == :create %>
+      <div class="d-grid gap-2 mb-2 p-5 pt-0 pb-0">
+        <%= f.submit t(".create_course"), class: "btn btn-dark btn-lg font-family-ubuntu" %>
+      </div>
+    <% else %>
+      <div class="card">
+        <div class="card-header">
+          <span><i class="bi bi-table me-2"></i></span>
+          <%= t ".lessons" %>
+        </div>
+        <div class="card-body">
+          <div id="lessons-group">
+            <%= f.fields_for :lessons do |lesson_fields| %>
+              <div class="input-group p-2">
+                <%= lesson_fields.label :name, class: "input-group-text" %>
+                <%= lesson_fields.text_field :name, class: "form-control course-name" %>
+                <%= lesson_fields.text_area :description, class: "form-control course-name" %>
+              </div>
+            <% end %>
+            <template id="new-lesson-template">
+              <%= f.fields_for :lessons, @course.lessons.new, child_index: "new-lesson-template" do |lesson_fields| %>
+                <div class="input-group p-2">
+                  <%= lesson_fields.label :name, "#{t(".lesson")} new-lesson-template", class: "input-group-text" %>
+                  <%= lesson_fields.text_field :name, class: "form-control course-name" %>
+                  <%= lesson_fields.text_field :description, class: "form-control course-name" %>
+                </div>
+              <% end %>
+            </template>
+          </div>
+          <div class="px-2 my-2 py-1">
+            <button id="add-lesson" class="w-100 input-group-text text-center d-inline-block">
+              <%= t ".add_new_lesson" %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid m-3">
+      <%= f.submit t(".edit_course"), class: "btn btn-dark btn-lg font-family-ubuntu" %>
+      </div>
+    <% end %>
+  <% end %>
+</template>
+
+<course-form variant="<%= @variant %>"></course-form>

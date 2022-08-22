@@ -15,5 +15,15 @@ vi:
         description: "Mô tả"
         create_course: "Tạo khoá học"
       create:
-        course_create_succes: "Tạo khoá học mới thành công!"
+        course_create_success: "Tạo khoá học mới thành công!"
         course_create_fail: "Tạo khoá học mới thất bại!"
+      show:
+        title: "Khoá học #%{course}"
+        course_not_found: "Khóa học không tồn tại!"
+      edit:
+        title: "Chỉnh sửa khóa học #%{course}"
+        course: "Khóa học #%{course}"
+        course_not_found: "Khóa học không tồn tại!"
+      update:
+        course_update_success: "Cập nhật khóa học thành công!"
+        course_update_fail: "Cập nhật khóa học thất bại!"

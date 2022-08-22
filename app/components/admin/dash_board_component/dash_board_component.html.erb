@@ -1,54 +1,14 @@
-<main class="pt-3 main">
-  <div class="container-fluid overflow-auto">
-    <div class="row">
-      <div class="col-md-12">
-      <%= content_tag :h4, t(".dashboard") %>
-      </div>
-    </div>
-    <%= render CourseCardsGridComponent.new(courses: @courses, pagy: nil) %>
-    <div class="row">
-      <div class="col-md-12 mb-3">
-        <div class="card">
-          <div class="card-header">
-            <span><i class="bi bi-table me-2"></i></span>
-            <%= t ".lessons" %>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table
-                id="example"
-                class="table table-striped data-table"
-                style="width: 100%"
-              >
-                <thead>
-                  <tr>
-                    <%= content_tag :th, t(".name") %>
-                    <%= content_tag :th, t(".description") %>
-                    <%= content_tag :th, t(".course") %>
-                    <%= content_tag :th, t(".users_learning") %>
-                    <%= content_tag :th, t(".users_completed") %>
-                    <%= content_tag :th, t(".created_at") %>
-                    <%= content_tag :th, t(".updated_at") %>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <%= content_tag :th, t(".name") %>
-                    <%= content_tag :th, t(".description") %>
-                    <%= content_tag :th, t(".course") %>
-                    <%= content_tag :th, t(".users_learning") %>
-                    <%= content_tag :th, t(".users_completed") %>
-                    <%= content_tag :th, t(".created_at") %>
-                    <%= content_tag :th, t(".updated_at") %>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
+
+<div class="container-fluid overflow-auto">
+  <div class="row p-2">
+    <div class="col-md-12">
+      <h3>
+        <span><i class="bi bi-speedometer2 me-2"></i></span>
+        <%= t ".dashboard" %>
+      </h3>
+      <%= render CourseCardsGridComponent.new(courses: @courses, pagy: nil) %>
+      <%= render Admin::LessonsListComponent.new lessons: @lessons %>
     </div>
   </div>
-</main>
+  
+</div>

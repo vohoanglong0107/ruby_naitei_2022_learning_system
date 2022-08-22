@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "datatables.net-bs5";
-import "../stylesheets/application.scss";
+import css from "../stylesheets/application.scss";
 import "../components";
 
 Rails.start();
@@ -16,3 +16,7 @@ Turbolinks.start();
 ActiveStorage.start();
 window.bootstrap = require("bootstrap");
 global.toastr = require("toastr");
+
+const sheet = new CSSStyleSheet();
+sheet.replaceSync(css.toString());
+document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];

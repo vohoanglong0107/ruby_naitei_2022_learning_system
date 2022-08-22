@@ -1,0 +1,9 @@
+vi:
+  id: "ID"
+  title: "Tên khoá học"
+  description: "Mô tả"
+  create_course: "Tạo khoá học"
+  edit_course: "Chỉnh sửa khoá học"
+  lesson: "Bài học"
+  lessons: "Bài học"
+  add_new_lesson: "Thêm bài học mới"

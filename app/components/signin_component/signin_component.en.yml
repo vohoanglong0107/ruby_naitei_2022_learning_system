@@ -1,5 +1,7 @@
 en:
   title: "E - Learning System"
+  email: "Email"
+  password: "Password"
   remember_me: "Remember me"
   forgot_pwd: "Forgot password"
   no_account: "Don't have an account? "
