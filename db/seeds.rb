@@ -18,3 +18,8 @@ courses = Course.all
                            order: i)
   end
 end
+
+10.times.each do |i|
+  Word.create!(definition: "Word N#{i}",
+               translation: Faker::Lorem.sentence)
+end

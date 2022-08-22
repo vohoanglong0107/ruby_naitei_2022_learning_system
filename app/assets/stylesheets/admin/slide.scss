@@ -1,0 +1,24 @@
+@import "../../stylesheets/font.scss";
+@import "../../stylesheets/colors.scss";
+
+.carousel-container {
+  width: 600px;
+}
+
+.carousel-inner {
+  background-color: $carousel_bg;
+  height: 400px;
+}
+
+.carousel-item {
+  position: absolute;
+  left: 30px;
+  top: 50px;
+}
+
+.current-word {
+  position: absolute;
+  left: 260px;
+  top: 300px;
+  color: $word_color;
+}
