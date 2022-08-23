@@ -1,0 +1,12 @@
+@import "colors";
+
+.exam-question {
+  --bs-card-cap-bg: #{$exam-question-bg} !important;
+}
+
+.exam-question-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 0.5rem;
+}

@@ -1,0 +1,41 @@
+<div class="container-fluid text-align-center">
+  <div class="d-flex justify-content-center p-5">
+    <h1 class="font-family-ubuntu"><%= @exam.lesson.name %></h1>
+  </div>
+  <%= form_with model: @exam do |f| %>
+    <%= f.fields_for :exam_questions do |question_fields| %>
+    <% question = question_fields.object %>
+    <div class="row justify-content-md-center">
+      <div class="col-md-8">
+        <div class="card m-3 exam-question">
+          <div class="card-header font-family-ubuntu">
+            <%= question_fields.label :definition, question.true_answer.definition %>
+          </div>
+          <div class="card-body">
+            <div class="exam-question-body">
+              <% answers = [question.true_answer] + question.wrong_answers %>
+              <% answers.shuffle().each do |answer| %>
+                <div class="d-flex justify-content-center align-items-center">
+                  <%= question_fields.radio_button :user_answer_id, answer.id, class: "btn-check" %>
+                  <%=
+                    question_fields.label(
+                      :user_answer_id,
+                      answer.translation,
+                      value: answer.id,
+                      class: "btn btn-outline-secondary w-75 h-75 p-4 " +
+                        "d-flex align-items-center justify-content-center"
+                    )
+                  %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <div class="d-flex justify-content-center p-5">
+      <%= f.submit t(".submit"), class: "btn btn-dark" %>
+    </div>
+  <% end %>
+</div>

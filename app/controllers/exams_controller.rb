@@ -21,9 +21,19 @@ class ExamsController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    return redirect_to @exam if @exam.is_finished?
+  end
 
-  def update; end
+  def update
+    if @exam.update exam_params.merge is_finished: true
+      flash[:success] = t ".success"
+      redirect_to exam_path(@exam)
+    else
+      flash[:error] = t ".fail"
+      redirect_to edit_exam_path(@exam)
+    end
+  end
 
   private
 

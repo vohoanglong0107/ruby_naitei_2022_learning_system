@@ -1,6 +1,6 @@
 @import "../../../assets/stylesheets/colors.scss";
 
-.card-header {
-  background-color: $card_header_bg !important;
-  color: aliceblue !important;
+.words-list {
+  --bs-card-cap-bg: #{$card_header_bg} !important;
+  --bs-card-cap-color: aliceblue !important;
 }
