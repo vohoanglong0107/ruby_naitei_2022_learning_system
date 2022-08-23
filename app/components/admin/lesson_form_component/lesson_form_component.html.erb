@@ -1,0 +1,50 @@
+<template id="lesson-form-template">
+  <%= form_with model: [:admin, @lesson], method: :put do |f| %>
+    <div class="m-4">
+      <%= f.label :name, t(".title"), class: "form-label" %>
+      <%= f.text_area :name, class: "form-control lesson-name" %>
+    </div>
+
+    <div class="m-4">
+      <%= f.label :description, t(".description"), class: "form-label" %>
+      <%= f.text_area :description, class: "form-control lesson-description" %>
+    </div>
+
+      <div class="card mx-4">
+        <div class="card-header">
+          <span><i class="bi bi-table me-2"></i></span>
+          <%= t ".words" %>
+        </div>
+        <div class="card-body">
+          <div id="words-group">
+            <%= f.fields_for :words do |word_fields| %>
+              <div class="input-group p-2">
+                <%= word_fields.label :index, check_index(word_fields.index), class: "input-group-text" %>
+                <%= word_fields.text_field :definition, class: "form-control lesson-name" %>
+                <%= word_fields.text_area :translation, class: "form-control lesson-name" %>
+              </div>
+            <% end %>
+            <template id="new-word-template">
+              <%= f.fields_for :words, @lesson.words.new, child_index: "new-word-template" do |word_fields| %>
+                <div class="input-group p-2">
+                  <%= word_fields.label :definition, "new-word-template", class: "input-group-text" %>
+                  <%= word_fields.text_field :definition, class: "form-control lesson-name" %>
+                  <%= word_fields.text_field :translation, class: "form-control lesson-name" %>
+                </div>
+              <% end %>
+            </template>
+          </div>
+          <div class="px-2 my-2 py-1">
+            <button id="add-word" class="w-100 input-group-text text-center d-inline-block">
+              <%= t ".add_new_word" %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid m-3">
+      <%= f.submit t(".update_lesson"), class: "btn btn-dark btn-lg font-family-ubuntu" %>
+      </div>
+  <% end %>
+</template>
+
+<lesson-form></lesson-form>

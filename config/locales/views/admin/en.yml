@@ -32,3 +32,11 @@ en:
         word: "Word"
         title: "Lesson #id"
         add_lesson: "Add lesson"
+    lessons:
+      update:
+        lesson_update_success: "Lesson updated successfully!"
+        lesson_update_fail: "Lesson update fail!"
+      show:
+        lesson_not_exist: "Lesson not exist!"
+        lesson: "%{lesson_id}"
+        words_list: "Words list"

@@ -4,6 +4,12 @@ User.create!(name: "Example User",
              password_confirmation: "foobar",
              admin: true)
 
+User.create!(name: "Foobar",
+             email: "foobar@gmail.com",
+             password: "foobar",
+             password_confirmation: "foobar",
+             admin: false)
+
 20.times.each do |i|
   Course.create!(name: "Course N#{i}",
                  description: Faker::Lorem.sentence,

@@ -1,35 +1,31 @@
-<template id="lessons-list-template">
+<template id="words-list-template">
   <div class="row">
     <div class="col-md-12 mb-3">
       <div class="card">
         <div class="card-header">
           <span><i class="bi bi-table me-2"></i></span>
-          <%= t ".lessons" %>
+          <%= t ".words" %>
         </div>
         <div class="card-body">
           <div class="table-responsive">
             <table
-              id="lessons-list-table"
+              id="words-list-table"
               class="table table-striped data-table w-100"
             >
               <thead>
                 <tr>
-                  <%= content_tag :th, t(".name") %>
-                  <%= content_tag :th, t(".description") %>
-                  <%= content_tag :th, t(".course") %>
-                  <%= content_tag :th, t(".created_at") %>
-                  <%= content_tag :th, t(".updated_at") %>
+                  <%= content_tag :th, t(".definition") %>
+                  <%= content_tag :th, t(".translation") %>
+                  <%= content_tag :th, t(".lesson") %>
                   <%= content_tag :th, t(".delete") %>
                 </tr>
               </thead>
               <tbody>
-                <% @lessons.each do |lesson| %>
+                <% @words.each do |word| %>
                   <tr>
-                    <td><%= link_to lesson.name, admin_lesson_path(lesson), class: "text-decoration-none text-secondary" %></td>
-                    <td><%= lesson.description %></td>
-                    <td><%= lesson.course.name %></td>
-                    <%= content_tag :td, lesson.created_at %>
-                    <%= content_tag :td, lesson.updated_at %>
+                    <td><%= word.definition %></td>
+                    <td><%= word.translation %></td>
+                    <td><%= word.lesson.name %></td>
                     <td>
                       <%= link_to t(".delete"), '#', method: :delete, data: { confirm: t(".confirm") },
                       class: "btn btn-outline-secondary" %>
@@ -41,9 +37,7 @@
                 <tr>
                   <%= content_tag :th, t(".name") %>
                   <%= content_tag :th, t(".description") %>
-                  <%= content_tag :th, t(".course") %>
-                  <%= content_tag :th, t(".created_at") %>
-                  <%= content_tag :th, t(".updated_at") %>
+                  <%= content_tag :th, t(".lesson") %>
                   <%= content_tag :th, t(".delete") %>
                 </tr>
               </tfoot>
@@ -55,4 +49,4 @@
   </div>
 </template>
 
-<lessons-list></lessons-list>
+<words-list></words-list>
