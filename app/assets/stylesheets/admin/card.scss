@@ -11,11 +11,14 @@
   }
 }
 
-.flip-container, .front, .back {
+.flip-container,
+.front,
+.back {
   text-align: center;
 }
 
-.front, .back {
+.front,
+.back {
   backface-visibility: hidden;
   position: absolute;
   top: 0;

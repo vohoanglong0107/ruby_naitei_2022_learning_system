@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "datatables.net-bs5";
 import css from "../stylesheets/application.scss";
+import "!!style-loader!css-loader!sass-loader!../stylesheets/fonts.scss";
 import "../components";
 
 Rails.start();

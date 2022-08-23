@@ -1,6 +1,17 @@
-<div class="card course-card rounded-4">
-  <div class="card-body rounded-4">
-    <h5 class="card-title course-card-title"><%= @course.name %></h5>
-    <p class="card-text course-card-description"><%= @course.description %></p>
-  </div>
-</div>
+<template id="course-card-template">
+  <a class="text-decoration-none">
+    <div class="card course-card">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  </a>
+</template>
+
+<course-card
+  name='<%= @course.name %>'
+  description='<%= @course.description %>'
+  link='<%= link_to_course %>'
+>
+</course-card>

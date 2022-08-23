@@ -1,4 +1,1 @@
-<div class="font-family-montserrat">
-  <%= render Admin::AddButtonComponent.new %>
-  <%= render CourseCardsGridComponent.new(courses: @courses, pagy: @pagy) %>
-</div>
+<%= render CourseCardsGridComponent.new(courses: @courses, pagy: @pagy) %>
