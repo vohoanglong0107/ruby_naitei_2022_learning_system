@@ -1,7 +1,7 @@
 class Admin::CoursesController < Admin::BaseController
   include Pagy::Backend
   before_action :guard_admin
-  before_action :set_course, only: %i(show edit update)
+  before_action :set_course, only: %i(show edit update destroy)
 
   def index
     @pagy, @courses = pagy Course.recommended
@@ -33,6 +33,15 @@ class Admin::CoursesController < Admin::BaseController
       flash[:error] = @course.errors.full_messages
     end
     redirect_to admin_course_path @course
+  end
+
+  def destroy
+    if @course.destroy
+      flash[:success] = t ".course_delete_success"
+    else
+      flash[:error] = t ".course_delete_fail"
+    end
+    redirect_to admin_courses_path
   end
 
   private
