@@ -4,3 +4,8 @@ en:
     create:
       success: "Good luck and have fun!"
       fail: "Error creating exam"
+    edit:
+      submit: "Submit"
+    update:
+      success: "Well done!"
+      fail: "Error submitting exam"

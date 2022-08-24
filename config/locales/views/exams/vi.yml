@@ -4,3 +4,8 @@ vi:
     create:
       success: "Chúc bạn may mắn!"
       fail: "Lỗi khi tạo bài thi"
+    edit:
+      submit: "Nộp bài"
+    update:
+      success: "Chúc mừng bạn đã hoàn thành bài thi!"
+      fail: "Lỗi khi nộp bài"
