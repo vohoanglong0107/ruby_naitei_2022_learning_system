@@ -1,19 +1,43 @@
 @import "../../stylesheets/font.scss";
 @import "../../stylesheets/colors.scss";
 
-.carousel-container {
+.word-carousel {
   width: 600px;
-}
-
-.carousel-inner {
-  background-color: $carousel_bg;
-  height: 400px;
-}
-
-.carousel-item {
-  position: absolute;
-  left: 30px;
-  top: 50px;
+  .carousel-inner {
+    background-color: $carousel_bg;
+    height: 400px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    .carousel-item {
+      grid-area: 1 / 1 / 2 / 2;
+      height: 100%;
+      .carousel-caption {
+        bottom: 0;
+      }
+      div .form-check-input {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        background-color: beige;
+        height: 1.3rem;
+        width: 1.3rem;
+        &:checked {
+          background-color: orange;
+        }
+      }
+    }
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    height: min-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 .current-word {

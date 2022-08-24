@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
@@ -13,11 +14,17 @@ Rails.application.routes.draw do
     resources :courses, only: %i(index show)
     resources :lessons, only: :show
     resources :exams, except: :destroy
+    resources :user_learn_words, only: %i(create destroy)
+    resources :lessons do
+      resources :words, only: :index
+    end
     namespace :admin do
       root to: "static_pages#index"
       resources :static_pages
       resources :courses
-      resources :lessons
+      resources :lessons do
+        resources :words, only: :index
+      end
       resources :words
     end
   end

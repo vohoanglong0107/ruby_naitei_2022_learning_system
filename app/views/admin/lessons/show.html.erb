@@ -8,5 +8,5 @@
 </div>
 <p class="fs-3 d-flex justify-content-center mt-5"><%= t ".words_list" %></p>
 <div class="mx-2">
-  <%= render Admin::WordsListComponent.new words: @lesson.words %>
+  <%= render Admin::WordsListComponent.new lesson: @lesson %>
 </div>

@@ -13,6 +13,6 @@
 </div>
 <p class="fs-3 mt-5 d-flex justify-content-center font-family-ubuntu"><%= t ".words_list" %></p>
 <div class="mx-5">
-  <%= render Admin::WordsListComponent.new words: @lesson.words %>
+  <%= render Admin::WordsListComponent.new lesson: @lesson %>
 </div>
 
