@@ -15,6 +15,8 @@ class User < ApplicationRecord
                        length: {minimum: Settings.user.password_min_length},
                         allow_nil: true
 
+  scope :learners, ->{where(admin: false)}
+
   has_secure_password
 
   class << self
