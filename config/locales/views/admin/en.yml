@@ -35,10 +35,14 @@ en:
         course_delete_success: "Course is deleted successfully!"
         course_delete_fail: "Course is not deleted!"
     words:
+      not_found: "Word not found!"
       index:
         word: "Word"
         title: "Lesson #id"
         add_lesson: "Add lesson"
+      destroy:
+        success: "Word is deleted successfully!"
+        error: "Word is not deleted!"
     lessons:
       update:
         lesson_update_success: "Lesson updated successfully!"

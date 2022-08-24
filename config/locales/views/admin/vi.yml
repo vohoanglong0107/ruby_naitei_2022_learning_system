@@ -28,7 +28,11 @@ vi:
         course_update_success: "Cập nhật khóa học thành công!"
         course_update_fail: "Cập nhật khóa học thất bại!"
     words:
+      not_found: "Từ không tồn tại!"
       index:
         word: "Từ vựng"
         title: "Bài học #id"
         add_lesson: "Thêm bài học"
+      destroy:
+        success: "Xóa từ thành công!"
+        error: "Xóa từ thất bại!"
