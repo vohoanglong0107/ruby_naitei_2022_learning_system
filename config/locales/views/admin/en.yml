@@ -4,6 +4,10 @@ en:
       index:
         title: "Admin Site"
         request_login: "Please login"
+    page:
+      courses:
+        show_component:
+          delete: "Delete"
     courses:
       index:
         title: "Course"
@@ -27,6 +31,9 @@ en:
       update:
         course_update_success: "Course is updated successfully!"
         course_update_fail: "Course is not updated!"
+      destroy:
+        course_delete_success: "Course is deleted successfully!"
+        course_delete_fail: "Course is not deleted!"
     words:
       index:
         word: "Word"
