@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_many :exams, dependent: :destroy
+  has_many :word_associations, class_name: UserLearnWord.name,
+                               dependent: :destroy
+  has_many :learned_words, through: :word_associations, source: :word
   before_save :downcase_email
   attr_accessor :remember_token
 
@@ -48,6 +51,10 @@ class User < ApplicationRecord
 
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def learned? word
+    learned_words.include? word
   end
 
   private

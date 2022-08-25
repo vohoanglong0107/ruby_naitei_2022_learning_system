@@ -1,8 +1,7 @@
 <template id="words-list-template">
   <div class="card words-list">
     <div class="card-header">
-      <span><i class="bi bi-table me-2"></i></span>
-      <%= t ".words" %>
+      <slot name="card-header"></slot>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -10,44 +9,21 @@
           id="words-list-table"
           class="table table-striped data-table w-100"
         >
-          <thead>
-            <tr>
-              <%= content_tag :th, t(".definition") %>
-              <%= content_tag :th, t(".translation") %>
-              <%= content_tag :th, t(".lesson") %>
-              <%= current_user.admin? ? content_tag(:th, t(".delete")) : "" %>
-            </tr>
-          </thead>
-          <tbody>
-            <% @words.each do |word| %>
-              <tr>
-                <td><%= word.definition %></td>
-                <td><%= word.translation %></td>
-                <td><%= word.lesson.name %></td>
-                <% if current_user.admin? %>
-                  <td>
-                    <%=
-                      button_to t(".delete"), admin_word_path(word), method: :delete,
-                                                                      data: { confirm: t(".confirm_delete") },
-                                                                      class: "btn btn-outline-secondary"
-                    %>
-                  </td>
-                <% end %>
-              </tr>
-            <% end %>
-          </tbody>
-          <tfoot>
-            <tr>
-              <%= content_tag :th, t(".name") %>
-              <%= content_tag :th, t(".description") %>
-              <%= content_tag :th, t(".lesson") %>
-              <%= current_user.admin? ? content_tag(:th, t(".delete")) : "" %>
-            </tr>
-          </tfoot>
         </table>
       </div>
     </div>
   </div>
 </template>
 
-<words-list></words-list>
+
+<words-list
+  headers="<%= table_headers %>"
+  columns="<%= table_columns %>"
+  data-url="<%= table_data_url %>"
+  data-confirm-message = "<%= t ".confirm_delete" %>"
+>
+  <div slot="card-header">
+    <span><i class="bi bi-table me-2"></i></span>
+    <%= t ".words" %>
+  </div>
+</words-list>
