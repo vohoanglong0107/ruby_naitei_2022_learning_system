@@ -20,6 +20,7 @@ word:
   max_length_255: 255
 exam:
   max_questions_per_exam_40: 40
+  min_passed_percentage_80: 0.8
 admin:
   lesson:
     number_8: 8

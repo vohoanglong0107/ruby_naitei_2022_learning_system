@@ -16,6 +16,8 @@ class Lesson < ApplicationRecord
            maximum: Settings.lesson.length.max_1000
          }
 
+  delegate :name, to: :course, prefix: true
+
   private
   def reject_word word_attrs
     word_attrs[:definition].blank?

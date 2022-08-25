@@ -1,0 +1,45 @@
+<template id="exams-list-template">
+  <div class="card exams-list">
+    <div class="card-header">
+      <span><i class="bi bi-table me-2"></i></span>
+      <%= t ".exams" %>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          id="exams-list-table"
+          class="table table-striped data-table w-100"
+        >
+          <thead>
+            <tr>
+              <%= content_tag :th, t(".user_id") %>
+              <%= content_tag :th, t(".course") %>
+              <%= content_tag :th, t(".lesson") %>
+              <%= content_tag :th, t(".created_at") %>
+              <%= content_tag :th, t(".updated_at") %>
+              <%= content_tag :th, t(".is_finish") %>
+              <%= content_tag :th, t(".check") %>
+            </tr>
+          </thead>
+          <tbody>
+            <% @exams.each do |exam| %>
+              <tr>
+                <td><%= exam.user_id %></td>
+                <td><%= exam.course_name %></td>
+                <td><%= exam.lesson_name %></td>
+                <td><%= l exam.created_at, format: :short %></td>
+                <td><%= l exam.updated_at, format: :short %></td>
+                <td><%= exam.is_finished ? t(".finished") : t(".not_finish") %></td>
+                <td>
+                  <%= button_to t(".check"), admin_exam_path(exam), method: :get, class: "btn btn-outline-secondary" %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+
+<admin-exams-list></admin-exams-list>

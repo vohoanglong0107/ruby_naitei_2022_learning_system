@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       end
       resources :words
       resources :users, only: %i(index destroy)
+      resources :exams, only: %i(index show)
     end
   end
 end

@@ -2,11 +2,11 @@
   <div class="d-flex justify-content-center p-5 pb-2">
     <h1 class="font-family-ubuntu"><%= @exam.lesson.name %></h1>
   </div>
-  <% score = total_correct_questions(@exam.exam_questions) %>
+  <p class="d-none"><%= score = total_correct_questions(@exam.exam_questions) %></p>
   <div class="d-flex justify-content-center align-items-center">
-    <h4 class="font-family-ubuntu "><%= t ".score #{score}" %> </h4>
+    <h4 class="font-family-ubuntu "><%= t ".score #{score}" %></h4>
     <h5 class="text-danger ms-2">
-      <% if score/@exam.exam_questions.length >= 0.8  %>
+      <% if score/@exam.exam_questions.length >= Settings.exam.min_passed_percentage_80  %>
         <%= t ".passed" %>
       <% else %>
         <%= t ".not_pass" %>
