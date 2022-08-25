@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_24_081239) do
-
+ActiveRecord::Schema.define(version: 20_220_825_025_401) do
   create_table "courses", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -25,9 +24,10 @@ ActiveRecord::Schema.define(version: 2022_08_24_081239) do
     t.bigint "word_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["exam_question_id", "word_id"], name: "index_exam_answers_on_exam_question_id_and_word_id", unique: true
-    t.index ["exam_question_id"], name: "index_exam_answers_on_exam_question_id"
-    t.index ["word_id"], name: "index_exam_answers_on_word_id"
+    t.index %w(exam_question_id word_id),
+            name: "index_exam_answers_on_exam_question_id_and_word_id", unique: true
+    t.index %w(exam_question_id), name: "index_exam_answers_on_exam_question_id"
+    t.index %w(word_id), name: "index_exam_answers_on_word_id"
   end
 
   create_table "exam_questions", charset: "utf8mb4", force: :cascade do |t|
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 2022_08_24_081239) do
     t.bigint "exam_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["exam_id"], name: "index_exam_questions_on_exam_id"
-    t.index ["true_answer_id"], name: "fk_rails_492b1bb277"
-    t.index ["user_answer_id"], name: "fk_rails_52dd662ca4"
+    t.index %w(exam_id), name: "index_exam_questions_on_exam_id"
+    t.index %w(true_answer_id), name: "fk_rails_492b1bb277"
+    t.index %w(user_answer_id), name: "fk_rails_52dd662ca4"
   end
 
   create_table "exams", charset: "utf8mb4", force: :cascade do |t|
@@ -47,19 +47,28 @@ ActiveRecord::Schema.define(version: 2022_08_24_081239) do
     t.boolean "is_finished", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["lesson_id"], name: "index_exams_on_lesson_id"
-    t.index ["user_id"], name: "index_exams_on_user_id"
+    t.index %w(lesson_id), name: "index_exams_on_lesson_id"
+    t.index %w(user_id), name: "index_exams_on_user_id"
+  end
+
+  create_table "lesson_accomplishments", charset: "utf8mb4",
+force: :cascade do |t|
+    t.bigint "lesson_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index %w(lesson_id), name: "index_lesson_accomplishments_on_lesson_id"
+    t.index %w(user_id), name: "index_lesson_accomplishments_on_user_id"
   end
 
   create_table "lessons", charset: "utf8mb4", force: :cascade do |t|
     t.integer "order"
     t.string "name"
     t.text "description"
-    t.boolean "completed", default: false
     t.bigint "course_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_lessons_on_course_id"
+    t.index %w(course_id), name: "index_lessons_on_course_id"
   end
 
   create_table "user_learn_words", charset: "utf8mb4", force: :cascade do |t|
@@ -67,8 +76,8 @@ ActiveRecord::Schema.define(version: 2022_08_24_081239) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_user_learn_words_on_user_id"
-    t.index ["word_id"], name: "index_user_learn_words_on_word_id"
+    t.index %w(user_id), name: "index_user_learn_words_on_user_id"
+    t.index %w(word_id), name: "index_user_learn_words_on_word_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -79,7 +88,7 @@ ActiveRecord::Schema.define(version: 2022_08_24_081239) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_digest"
     t.boolean "admin"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index %w(email), name: "index_users_on_email", unique: true
   end
 
   create_table "words", charset: "utf8mb4", force: :cascade do |t|
@@ -88,7 +97,7 @@ ActiveRecord::Schema.define(version: 2022_08_24_081239) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "lesson_id", null: false
-    t.index ["lesson_id"], name: "index_words_on_lesson_id"
+    t.index %w(lesson_id), name: "index_words_on_lesson_id"
   end
 
   add_foreign_key "exam_answers", "exam_questions"
@@ -98,6 +107,8 @@ ActiveRecord::Schema.define(version: 2022_08_24_081239) do
   add_foreign_key "exam_questions", "words", column: "user_answer_id"
   add_foreign_key "exams", "lessons"
   add_foreign_key "exams", "users"
+  add_foreign_key "lesson_accomplishments", "lessons"
+  add_foreign_key "lesson_accomplishments", "users"
   add_foreign_key "lessons", "courses"
   add_foreign_key "user_learn_words", "users"
   add_foreign_key "user_learn_words", "words"

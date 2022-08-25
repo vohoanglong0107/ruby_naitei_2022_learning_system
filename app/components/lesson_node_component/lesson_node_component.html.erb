@@ -27,4 +27,4 @@
     </svg>
   </a>
 </template>
-<lesson-node class='<%= @classes %>' link='<%= lesson_path(@lesson) %>' completed='<%= @lesson.completed? %>' tooltip='<%= @lesson.name %>'></lesson-node>
+<lesson-node class='<%= @classes %>' link='<%= lesson_path(@lesson) %>' completed='<%= @lesson.completed_by? current_user %>' tooltip='<%= @lesson.name %>'></lesson-node>

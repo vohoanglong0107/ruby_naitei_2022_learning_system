@@ -9,3 +9,7 @@ vi:
     update:
       success: "Chúc mừng bạn đã hoàn thành bài thi!"
       fail: "Lỗi khi nộp bài"
+    show:
+      score: "Điểm: %{score}"
+      passed: "Đậu"
+      failed: "Trượt"

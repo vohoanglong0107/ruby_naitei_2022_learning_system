@@ -58,3 +58,8 @@ en:
       destroy:
         success: "User is deleted!"
         fail: "User delete fail!"
+    exams:
+      show:
+        score: "Score: %{score}"
+        passed: "Passed"
+        failed: "Failed"

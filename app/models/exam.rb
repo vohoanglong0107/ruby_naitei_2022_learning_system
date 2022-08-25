@@ -9,4 +9,18 @@ class Exam < ApplicationRecord
 
   delegate :name, to: :lesson, prefix: true
   delegate :course_name, to: :lesson
+
+  def score
+    exam_questions.correctly_answered.count
+  end
+
+  def passed?
+    score / exam_questions.length >= Settings.exam.min_passed_percentage_80
+  end
+
+  class << self
+    def by_user_on_lesson user_id, lesson_id
+      where(user_id: user_id, lesson_id: lesson_id)
+    end
+  end
 end

@@ -18,6 +18,19 @@ class Lesson < ApplicationRecord
 
   delegate :name, to: :course, prefix: true
 
+  def learned_all_words_by? user
+    user.learned_words.where(lesson_id: id).count == words.count
+  end
+
+  def test_completed_by? user
+    Exam.by_user_on_lesson(user.id, id).any?(&:passed?)
+  end
+
+  def completed_by? user
+    learned_all_words_by? user
+    test_completed_by? user
+  end
+
   private
   def reject_word word_attrs
     word_attrs[:definition].blank?
