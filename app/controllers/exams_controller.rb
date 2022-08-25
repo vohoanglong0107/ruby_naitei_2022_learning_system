@@ -1,4 +1,4 @@
-class ExamsController < ApplicationController
+class ExamsController < BaseController
   before_action :load_exam, only: %i(show edit update)
 
   def new
@@ -17,9 +17,13 @@ class ExamsController < ApplicationController
     end
   end
 
-  def index; end
+  def index
+    @exams = current_user.exams
+  end
 
-  def show; end
+  def show
+    return redirect_to edit_exam_path(@exam) unless @exam.is_finished?
+  end
 
   def edit
     return redirect_to @exam if @exam.is_finished?
@@ -43,7 +47,7 @@ class ExamsController < ApplicationController
 
   def load_exam
     @exam = Exam.find_by id: params[:id]
-    return if @exam.present?
+    return if @exam
 
     flash[:error] = t "exams.not_found"
     redirect_to exams_path
