@@ -51,3 +51,10 @@ en:
         lesson_not_exist: "Lesson not exist!"
         lesson: "%{lesson_id}"
         words_list: "Words list"
+    users:
+      index:
+        all_users: "All users"
+      not_found: "User not exist!"
+      destroy:
+        success: "User is deleted!"
+        fail: "User delete fail!"
