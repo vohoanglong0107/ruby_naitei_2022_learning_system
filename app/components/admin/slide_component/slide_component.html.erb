@@ -8,12 +8,9 @@
             <input
               class="form-check-input"
               type="checkbox"
-              data-check-href='<%= user_learn_words_path %>'
               data-word-id='<%= word.id %>'
-              
-              <% if current_user.learned?(word) %>
-                <% word_association = current_user.word_associations.find_by word_id: word.id %>
-                <%= "data-uncheck-href=#{user_learn_word_path word_association}" %>
+              <% if word.user_learn_words_id.present? %>
+                <%= "data-user-learn-word-id= #{word.user_learn_words_id}" %>
                 <%= "checked" %>
               <% end %>
             >
