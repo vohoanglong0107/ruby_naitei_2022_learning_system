@@ -2,7 +2,8 @@ class CoursesController < BaseController
   include Pagy::Backend
 
   def index
-    @pagy, @courses = pagy Course.recommended
+    @search_query = Course.ransack params[:q]
+    @pagy, @courses = pagy @search_query.result
   end
 
   def show
