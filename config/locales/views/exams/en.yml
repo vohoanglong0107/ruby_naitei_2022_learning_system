@@ -9,3 +9,7 @@ en:
     update:
       success: "Well done!"
       fail: "Error submitting exam"
+    show:
+      score: "Score: %{score}"
+      passed: "Passed"
+      failed: "Failed"

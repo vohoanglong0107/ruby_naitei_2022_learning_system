@@ -12,10 +12,10 @@ module ExamsHelper
 
   def btn_color_base_on_answer question, answer
     if question.true_answer.id == answer.id
-      if question.user_answer_id.present?
-        "btn-success"
-      else
+      if question.user_answer_id.nil?
         "btn-warning"
+      else
+        "btn-success"
       end
     elsif question.true_answer.id != answer.id &&
           answer.id == question.user_answer_id
@@ -23,14 +23,6 @@ module ExamsHelper
     else
       "btn-outline-secondary"
     end
-  end
-
-  def total_correct_questions questions
-    score = 0
-    questions.each do |question|
-      score += 1 if question.true_answer.id == question.user_answer_id
-    end
-    score
   end
 
   def set_answers; end

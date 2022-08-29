@@ -36,3 +36,8 @@ vi:
       destroy:
         success: "Xóa từ thành công!"
         error: "Xóa từ thất bại!"
+    exams:
+      show:
+        score: "Điểm: %{score}"
+        passed: "Đậu"
+        failed: "Trượt"

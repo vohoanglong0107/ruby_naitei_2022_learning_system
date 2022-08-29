@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :word_associations, class_name: UserLearnWord.name,
                                dependent: :destroy
   has_many :learned_words, through: :word_associations, source: :word
+  has_many :lesson_accomplishments, dependent: :destroy
+  has_many :completed_lessons, through: :lesson_accomplishments, source: :lesson
   before_save :downcase_email
   attr_accessor :remember_token
 

@@ -7,4 +7,6 @@ class ExamQuestion < ApplicationRecord
                         primary_key: :true_answer_id,
                         dependent: :destroy
   accepts_nested_attributes_for :wrong_answers, allow_destroy: true
+
+  scope :correctly_answered, ->{where("user_answer_id = true_answer_id")}
 end
