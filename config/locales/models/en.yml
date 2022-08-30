@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        name: "Name"
+  errors:
+    messages:
+      must_be_valid_email: "Must be a valid email address"
+      must_be_at_least: "Must be at least %{count} characters"
+      password_confirmation: "Password confirmation doesn't match Password"
+      taken: "has already been taken"

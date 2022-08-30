@@ -1,16 +1,14 @@
 # rubocop:disable Metrics/BlockLength
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
+    devise_for :users, controllers: {
+      sessions: "users/sessions",
+      registrations: "users/registrations"
+    }
     root "static_pages#home"
     get "/help", to: "static_pages#help"
     get "/about", to: "static_pages#about"
-    get "/signup", to: "users#new"
-    post "/signup", to: "users#create"
-    get "/signin", to: "sessions#new"
-    post "/signin", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
 
-    resources :users, only: %i(new create)
     resources :courses, only: %i(index show)
     resources :lessons, only: :show
     resources :exams, except: :destroy

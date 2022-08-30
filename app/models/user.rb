@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   has_many :exams, dependent: :destroy
   has_many :word_associations, class_name: UserLearnWord.name,
                                dependent: :destroy
@@ -21,8 +25,6 @@ class User < ApplicationRecord
                         allow_nil: true
 
   scope :learners, ->{where(admin: false)}
-
-  has_secure_password
 
   class << self
     def digest string

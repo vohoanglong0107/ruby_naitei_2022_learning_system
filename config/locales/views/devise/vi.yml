@@ -1,0 +1,11 @@
+vi:
+  devise:
+    failure:
+      invalid: "%{authentication_keys} hoặc mật khẩu không hợp lệ."
+      not_found_in_database: "%{authentication_keys} hoặc mật khẩu không hợp lệ."
+    sessions:
+      new:
+        title: "E - Learning System"
+        no_account: Không có tài khoản?
+        sign_up_link: Đăng ký ngay!
+        forgot_pwd: Quên mật khẩu?

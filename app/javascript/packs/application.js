@@ -16,6 +16,7 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 window.bootstrap = require("bootstrap");
+global.$ = jQuery;
 global.toastr = require("toastr");
 
 const sheet = new CSSStyleSheet();

@@ -5,6 +5,8 @@ ruby "3.0.2"
 
 gem "bcrypt", "~> 3.1.7"
 gem "config", "~> 4.0.0"
+gem "devise", "~> 4.8.1"
+gem "devise-i18n", "~> 1.10.2"
 gem "faker", "~> 2.22.0"
 gem "image_processing", "~> 1.2"
 gem "jbuilder", "~> 2.7"
