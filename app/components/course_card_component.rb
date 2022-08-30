@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CourseCardComponent < ViewComponent::Base
-  include SessionsHelper
+  include Devise::Controllers::Helpers
   def initialize course:
     super
     @course = course

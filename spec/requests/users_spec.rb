@@ -12,14 +12,5 @@ RSpec.describe "Users", type: :request do
 
       it{should redirect_to(root_path)}
     end
-    describe "unsuccesfully" do
-      before do
-        post "/users", params: {user: {name: "Example User",
-                                       email: "",
-                                       password: "",
-                                       password_confirmation: ""}}
-      end
-      it{should redirect_to(signup_path)}
-    end
   end
 end

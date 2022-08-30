@@ -1,0 +1,13 @@
+vi:
+  activerecord:
+    models:
+      user: Người dùng
+    attributes:
+      user:
+        name: "Tên"
+  errors:
+    messages:
+      must_be_valid_email: "Phải là một địa chỉ email hợp lệ"
+      must_be_at_least: "Phải có ít nhất %{count} ký tự"
+      password_confirmation: "Xác nhận mật khẩu không khớp"
+      taken: "đã tồn tại"

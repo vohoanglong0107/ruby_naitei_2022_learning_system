@@ -521,6 +521,10 @@ Lint/AssignmentInCondition:
 Lint/MissingSuper:
   Exclude:
     - app/components/**/*.rb
+
+Lint/UselessMethodDefinition:
+  Exclude:
+    - app/controllers/**/*.rb
 # Align ends correctly.
 Layout/EndAlignment:
   # The value `keyword` means that `end` should be aligned with the matching

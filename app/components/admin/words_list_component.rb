@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::WordsListComponent < ViewComponent::Base
-  include SessionsHelper
+  include Devise::Controllers::Helpers
 
   def initialize lesson:
     super

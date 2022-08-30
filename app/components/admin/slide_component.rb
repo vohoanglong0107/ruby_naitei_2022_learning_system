@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::SlideComponent < ViewComponent::Base
-  include SessionsHelper
+  include Devise::Controllers::Helpers
   def initialize words:
     super
     @words = words

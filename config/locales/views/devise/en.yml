@@ -1,0 +1,11 @@
+en:
+  devise:
+    failure:
+      invalid: Invalid %{authentication_keys} or password.
+      not_found_in_database: Invalid %{authentication_keys} or password.
+    sessions:
+      new:
+        title: "E - Learning System"
+        no_account: "Don't have an account? " 
+        sign_up_link: "Sign up now!"
+        forgot_pwd: "Forgot password"

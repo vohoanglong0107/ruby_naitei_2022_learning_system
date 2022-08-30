@@ -31,8 +31,9 @@ jobs:
           MYSQL_PASSWORD: password_test
           MYSQL_ROOT_PASSWORD: password_test
     before_script:
+      - cat config/database.yml
       - apt install -y curl && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && . ~/.nvm/nvm.sh && nvm install 16.16.0 && nvm use 16.16.0 && nvm alias default 16.16.0 && npm install --global yarn
-      - export BUNDLE_PATH=vendor/bundle && bundle _2.1.4_ exec rake db:migrate RAILS_ENV=test && bundle _2.1.4_ exec rails webpacker:install
+      - export BUNDLE_PATH=vendor/bundle && bundle _2.1.4_ exec rake db:migrate RAILS_ENV=test
       - mkdir .sun-ci && chmod 777 .sun-ci
     script:
       - DISABLE_SPRING=1 bundle _2.1.4_ exec rspec

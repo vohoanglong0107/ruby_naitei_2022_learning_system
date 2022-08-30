@@ -1,0 +1,48 @@
+{
+  const element = $("#new_user");
+  const user_attributes = [
+    '#user_name',
+    '#user_email',
+    '#user_password',
+    '#user_password_confirmation'
+  ];
+  user_attributes.forEach(attribute => {
+    element.find(attribute).nextAll(".invalid-feedback").remove();
+    element.find(attribute).removeClass("is-invalid");
+    element.find(attribute).addClass("is-valid");
+  });
+  const password = element.find('#user_password');
+  const confirm = element.find('#user_password_confirmation');
+  if (password.val() !== confirm.val()) {
+    confirm.nextAll(".invalid-feedback").remove();
+    confirm.get(0).setCustomValidity(confirm.prop("title"));
+    confirm.removeClass("is-valid");
+    confirm.addClass("is-invalid");
+  }
+  else if (confirm.val() === ''){
+    confirm.nextAll(".invalid-feedback").remove();
+    confirm.removeClass("is-valid");
+    confirm.addClass("is-invalid");
+  }
+  else {
+    confirm.get(0).setCustomValidity('');
+  }
+
+  console.log('<%= after_sign_up_path_for(self.resource) %>');
+
+  <% if self.resource.persisted? %>
+    window.location.href = '<%= after_sign_up_path_for(self.resource) %>';
+  <% else %>
+    <% errors = self.resource.errors %>
+    <% errors.each do |error| %>
+      {
+        const form_field_selector = '<%= "#user_#{error.attribute}" %>';
+        const error_message = '<%= error.full_message %>';
+        const form_field = element.find(form_field_selector);
+        form_field.removeClass("is-valid");
+        form_field.addClass("is-invalid");
+        form_field.after(`<div class="invalid-feedback">${error_message}</div>`);
+      }
+    <% end %>
+  <% end %>
+}

@@ -39,6 +39,5 @@ RSpec.describe User, type: :model do
         .is_at_least(Settings.user.password_min_length)
     end
     it{should validate_confirmation_of(:password)}
-    it{should have_secure_password(:password)}
   end
 end

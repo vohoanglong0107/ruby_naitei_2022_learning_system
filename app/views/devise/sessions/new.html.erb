@@ -1,0 +1,61 @@
+<% provide(:title, t(".sign_in")) %>
+
+<section class="vh-100 signin font-family-montserrat">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card rounded-4">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block img-box">
+              <img class="signin-illustrate-image position-relative top-50 start-50 translate-middle" src="/assets/ill.png" alt="illustrate-image">
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 text-black">
+                <div class="d-flex justify-content-center mb-3 pb-1">
+                  <span><img class="logo" src="/assets/logo.png" alt="logo"></span>
+                  <span class="h1 fw-bold mb-0"><p class="font-family-ubuntu signin-brand"><%= t ".title" %><p></span>
+                </div>
+
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="mb-4">
+                    <%= f.label :email, class: "form-label" %>
+                    <%= f.email_field :email, class: "form-control",
+                                              autocomplete: "email",
+                                              autofocus: true,
+                                              pattern: Settings.user.VALID_EMAIL_REGEX.sub("\\A" , "^").sub("\\z" , "$"),
+                                              title: t("errors.messages.must_be_valid_email"),
+                                              required: true %>
+                  </div>
+
+                  <div class="mb-4">
+                    <%= f.label :password, class: "form-label" %>
+                    <%= f.password_field :password, class: "form-control",
+                                                    autocomplete: "current-password",
+                                                    required: true %>
+                  </div>
+                  <% if devise_mapping.rememberable? %>
+                    <div class="mb-4">
+                      <%= f.check_box :remember_me, class: "form-check-input" %>
+                      <%= f.label :remember_me, class: "form-check-label"  %>
+                    </div>
+                  <% end %>
+                  
+                  <div class="d-grid gap-2 mb-2">
+                    <%= f.submit t(".sign_in"), class: "btn btn-dark btn-lg" %>
+                  </div>
+
+                  <%= link_to t(".forgot_pwd"), "#", class: "form-text text-decoration-none text-secondary" %>
+
+                  <p class="my-1 pb-lg-2">
+                    <%= t ".no_account" %>
+                    <%= link_to t(".sign_up_link"), new_user_registration_path, class: "text-decoration-none text-warning" %>
+                  </p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

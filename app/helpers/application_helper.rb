@@ -9,8 +9,10 @@ module ApplicationHelper
     case type
     when "error"
       "toastr.error"
-    when "success"
+    when "success", "notice"
       "toastr.success"
+    when "warning", "alert"
+      "toastr.warning"
     else
       "toastr.info"
     end

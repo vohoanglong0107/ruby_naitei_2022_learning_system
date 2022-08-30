@@ -1,5 +1,5 @@
 class Admin::BaseController < ApplicationController
-  before_action :guard_login, :guard_admin
+  before_action :guard_admin
   layout "application_admin"
 
   private
